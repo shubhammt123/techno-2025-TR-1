@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: cadetblue;
+    border: 1px solid beige;
+    width: 100px;
+}
+
+#parent-container{
+    display: flex;
+    /* justify-content: center;
+    background-color: chocolate;
+    height: 100vh;
+    align-items: center;
+    gap: 10px;
+     */
+     /* flex-direction: column; */
+     justify-content: center;
+     flex-wrap: wrap;
+     align-items: center;
+     height: 100vh;
+     background-color: chocolate;
+}

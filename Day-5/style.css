@@ -1,0 +1,41 @@
+img{
+    width: 50px;
+}
+
+header{
+    background-color: lightgray;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+
+input{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 3px 3px 6px 1px #9f9f9f;
+    outline: none;
+    border-radius: 5px;
+}
+
+a{
+    transition: 0.2s ease;
+}
+a:hover{
+    color: violet;
+    border-bottom: 1px solid violet;
+}

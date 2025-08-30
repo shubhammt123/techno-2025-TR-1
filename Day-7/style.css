@@ -1,0 +1,122 @@
+/* p , h1 , h2{
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+} */
+
+/* #container .para,#para1{
+    font-size: 30px;
+    color: blueviolet;
+}
+ */
+
+
+/* div>section>h1{
+    font-size: 30px;
+    color: brown;
+} */
+
+
+/* h1~p{
+    font-size: 30px;
+    color: chocolate;
+} */
+
+
+/* pseudo selectors */
+/* pseudo classes */
+/* pseudo elements */
+
+/* pseudo classes - focus , hover , link , active , visited , nth-child , last-child , first-child , empty */
+
+/* pseudo-elements - before , after , placeholder , selection */
+
+/* input{
+    outline: none;
+    padding: 10px;
+    border: none;
+    box-shadow: 1px 1px 3px 1px #e0e0e0;
+}
+input:focus{
+    border: 3px solid red;
+    color: red;
+} */
+
+/* #container{
+    width: 200px;
+    height: 200px;
+    background-color: cadetblue;
+    transition: 2s ease-in-out;
+}
+
+#container:hover{
+    width: 210px;
+    height: 210px;
+    background-color:burlywood;
+    border-radius: 50%;
+}
+ */
+
+/* a{
+    font-size: 40px;
+} */
+
+
+
+/* a:active{
+    color: yellow;
+}
+
+a:visited{
+    color: green;
+} */
+
+/* link --> visited --> hover -->  active */
+
+/* a:link{
+    color: red;
+}
+
+a:visited{
+    color: green;
+}
+
+a:hover{
+    color: yellow;
+}
+
+a:active{
+    color:orange;
+} */
+
+/* button{
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid orange;
+    color: orange;
+    font-size: 40px;
+}
+
+button:active{
+    background-color: orange;
+    color: white;
+} */
+
+/* 
+li:last-child{
+    background-color: lightcoral;
+} */
+
+/* p:last-child{
+    background-color: lightsalmon;
+}
+p:first-child{
+    background-color: rgb(31, 177, 114);
+} */
+
+/* li:nth-child(2n+1){
+    background-color: lightsteelblue;
+} */
+
+/* 2a+b */
+
