@@ -38,22 +38,45 @@
 // sum(100,200);
 
 
-function func2(a){
-    console.log(a);
-    a(100);
-    console.log("This is func2");
+// function func2(a){
+//     console.log(a);
+//     a(100);
+//     console.log("This is func2");
+// }
+
+// function callback1(p1){
+//     console.log(p1);
+//     console.log("This is func 1 and passing as a callback");
+// }
+
+// function callback2(p2){
+//     console.log(p2)
+//     console.log("Func 3 is called and passing as a callback");
+// }
+
+// func2(callback1); // func1 - callback , func2 - higher order function
+
+// func2(callback2);
+
+// calculator
+
+
+function calculator(a,b,operation){
+    console.log(operation)
+    operation(a,b);
 }
 
-function callback1(p1){
-    console.log(p1);
-    console.log("This is func 1 and passing as a callback");
-}
+calculator(100,200,(x,y)=>{
+    console.log(x/y);
+});
 
-function callback2(p2){
-    console.log(p2)
-    console.log("Func 3 is called and passing as a callback");
-}
+calculator(100,200,(x,y)=>{
+    console.log(x*y);
+});
 
-func2(callback1); // func1 - callback , func2 - higher order function
-
-func2(callback2);
+calculator(100,200,(x,y)=>{
+    console.log(x+y);
+})
+calculator(100,200,(x,y)=>{
+    console.log(x-y);
+})
