@@ -97,7 +97,7 @@ body{
 } */
 
 /* 2 types variables - global , local */
-
+/* 
 :root{
     --primary-background-color : rgb(230, 217, 173);
     --secondary-background-color : rgb(254, 255, 240);
@@ -154,4 +154,14 @@ body{
 
 .blog-para{
     color: var(--text-color);
-}
+} */
+ #container{
+    width: 400px;
+    height: 400px;
+    /* background-image: url("https://www.theknowledgeacademy.com/_files/images/CSS_Background_Image.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
+    background-color: lightblue;
+    overflow: auto;
+ }
