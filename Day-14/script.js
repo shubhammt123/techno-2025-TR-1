@@ -66,6 +66,10 @@ function calculator(a,b,operation){
     operation(a,b);
 }
 
+// let calculator = (x,y,callback) => {
+//     callback(x,y);
+// }
+
 calculator(100,200,(x,y)=>{
     console.log(x/y);
 });
