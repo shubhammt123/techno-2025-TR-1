@@ -53,22 +53,43 @@
 // })
 // console.log("Hello world");
 
-const fetchData = ()=>{
-    return fetch("https://fakestoreapi.com/products");    
+// const fetchData = ()=>{
+//     return fetch("https://fakestoreapi.com/products");    
+// }
+
+// fetchData()
+// .then((res)=>{
+//     console.log("res",res);
+//    return res.json()
+// })
+// .then((data)=>{
+//     console.log(data)
+//     let tbody = document.getElementById("tbody");
+//     data.forEach((item) => {
+//         let tr = document.createElement("tr");
+//         tr.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.price}</td><td>${item.category}</td><td>${item.rating.rate}</td>`;
+//         tbody.appendChild(tr);
+//     });
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
+
+
+const fetchData = async () => {
+    try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        console.log(data);
+        let tbody = document.getElementById("tbody");
+        data.forEach((item) => {
+            let tr = document.createElement("tr");
+            tr.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.price}</td><td>${item.category}</td><td>${item.rating.rate}</td>`;
+            tbody.appendChild(tr);
+        })
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-fetchData()
-.then((res)=>{
-   return res.json()
-})
-.then((data)=>{
-    let tbody = document.getElementById("tbody");
-    data.forEach((item) => {
-        let tr = document.createElement("tr");
-        tr.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.price}</td><td>${item.category}</td><td>${item.rating.rate}</td>`;
-        tbody.appendChild(tr);
-    });
-})
-.catch((error)=>{
-    console.log(error)
-})
+fetchData();
