@@ -74,22 +74,28 @@
 // .catch((error)=>{
 //     console.log(error)
 // })
+// .finally(()=>{
+//     console.log("Task completed");
+// })
 
 
-const fetchData = async () => {
-    try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const data = await response.json();
-        console.log(data);
-        let tbody = document.getElementById("tbody");
-        data.forEach((item) => {
-            let tr = document.createElement("tr");
-            tr.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.price}</td><td>${item.category}</td><td>${item.rating.rate}</td>`;
-            tbody.appendChild(tr);
-        })
-    } catch (error) {
-        console.log(error);
-    }
-}
+// const fetchData = async () => {
+//     try {
+//         const response = await fetch("https://fakestoreapi.com/products");
+//         const data = await response.json();
+//         console.log(data);
+//         let tbody = document.getElementById("tbody");
+//         data.forEach((item) => {
+//             let tr = document.createElement("tr");
+//             tr.innerHTML = `<td>${item.id}</td><td>${item.title}</td><td>${item.price}</td><td>${item.category}</td><td>${item.rating.rate}</td>`;
+//             tbody.appendChild(tr);
+//         })
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-fetchData();
+// fetchData();
+
+// Event Loop
+
