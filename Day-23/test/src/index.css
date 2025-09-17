@@ -1,0 +1,49 @@
+.image{
+    width: 80%;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.card{
+    box-shadow: 1px 1px 5px 3px #e1e1e1;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 20px; */
+}
+
+p{
+    font-size: 30px;
+}
+
+button{
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    margin: 20px 0;
+}
+
+button:active{
+    background-color: black;
+    color: white;
+}
