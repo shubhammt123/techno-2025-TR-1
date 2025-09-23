@@ -1,7 +1,9 @@
 import Card from "./Card";
+import ConditionalComponent from "./ConditionalComponent";
 import Effect from "./Effect";
 import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
+import Navbar from "./Navbar";
 
 function App() {
   let pName = "Samsung S24 Ultra";
@@ -39,8 +41,10 @@ function App() {
       })
      } */}
      {/* <Hooks /> */}
-     {/* <Effect /> */}
-     <Effect1 />
+     <Effect />
+     {/* <ConditionalComponent /> */}
+     {/* <Navbar /> */}
+     {/* <Effect1 /> */}
     </div>
   )
 }
