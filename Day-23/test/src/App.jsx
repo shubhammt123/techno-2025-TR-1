@@ -1,5 +1,6 @@
 import Card from "./Card";
 import Effect from "./Effect";
+import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
       })
      } */}
      {/* <Hooks /> */}
-     <Effect />
+     {/* <Effect /> */}
+     <Effect1 />
     </div>
   )
 }
