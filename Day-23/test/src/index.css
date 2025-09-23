@@ -27,7 +27,7 @@ body{
     padding: 0;
 }
 .container{
-    height: 100vh;
+    /* height: 100vh; */
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -65,4 +65,23 @@ button:active{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
 
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.346);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container{
+    width: 70%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
 }
