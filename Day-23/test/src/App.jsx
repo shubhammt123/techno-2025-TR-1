@@ -29,7 +29,7 @@ function App() {
   // ]
 
   return (
-    <div className="container">
+    <div>
      {/* {
       data.map((item)=>{
         return (
@@ -37,7 +37,7 @@ function App() {
         )
       })
      } */}
-     <Hooks />
+     {/* <Hooks /> */}
      <Effect />
     </div>
   )
