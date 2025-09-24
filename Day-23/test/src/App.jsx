@@ -3,6 +3,7 @@ import ConditionalComponent from "./ConditionalComponent";
 import Effect from "./Effect";
 import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
+import Login from "./Login";
 import Navbar from "./Navbar";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
   // ]
 
   return (
-    <div>
+    <div className="container">
      {/* {
       data.map((item)=>{
         return (
@@ -41,10 +42,11 @@ function App() {
       })
      } */}
      {/* <Hooks /> */}
-     <Effect />
+     {/* <Effect /> */}
      {/* <ConditionalComponent /> */}
      {/* <Navbar /> */}
      {/* <Effect1 /> */}
+     <Login />
     </div>
   )
 }
