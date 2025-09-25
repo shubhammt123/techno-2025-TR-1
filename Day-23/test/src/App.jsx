@@ -5,7 +5,6 @@ import Effect from "./Effect";
 import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
 import Login from "./Login";
-import Navbar from "./Navbar";
 import Router from "./Router";
 
 function App() {

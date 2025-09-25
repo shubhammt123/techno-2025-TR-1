@@ -1,13 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const Dashboard = () => {
+const OpenRoutes = () => {
   return (
     <div>
-      Dashboard
-      <Outlet />
+        <Outlet />
     </div>
   )
 }
 
-export default Dashboard
+export default OpenRoutes
