@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [role , SetRole] = useState("");
@@ -8,7 +9,7 @@ const Navbar = () => {
         <div>
             <input type="text" placeholder='Search...' />
         </div>
-        <div>
+        {/* <div>
             {role === "ADMIN" ? 
             <ul style={{listStyleType : "none" , display : "flex" , gap :  "10px"}}>
                 
@@ -33,6 +34,14 @@ const Navbar = () => {
                 <li>Blog</li>
             </ul> : ""
             }
+        </div> */}
+        <div>
+            <ul>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/login">Login</Link></li>
+            </ul>
         </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import { RouterProvider } from "react-router-dom";
 import Card from "./Card";
 import ConditionalComponent from "./ConditionalComponent";
 import Effect from "./Effect";
@@ -5,6 +6,7 @@ import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
 import Login from "./Login";
 import Navbar from "./Navbar";
+import Router from "./Router";
 
 function App() {
   let pName = "Samsung S24 Ultra";
@@ -46,7 +48,9 @@ function App() {
      {/* <ConditionalComponent /> */}
      {/* <Navbar /> */}
      {/* <Effect1 /> */}
-     <Login />
+     {/* <Login /> */}
+     {/* <Navbar /> */}
+     <RouterProvider router={Router} />
     </div>
   )
 }

@@ -4,18 +4,15 @@ const Login = () => {
 
     const [isSignup, setIsSignup] = useState(false);
     const [formData , setFormData] = useState({
-        userName : "",
         email : "",
         password : "",
-        confirmPassword : "",
-        contactNo : ""
     });
 
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(formData.confirmPassword)
         console.log(formData.password)
-        if(formData.confirmPassword !== formData.password){
+        if(isSignup && formData.confirmPassword !== formData.password){
             alert("Password and confirm password should be same");
             return;
         }
@@ -51,7 +48,8 @@ const Login = () => {
 
             <div style={{ textAlign: "center", color: "gray" }}>
                 {isSignup ? "Already have an account?" : "Don't have an account?"} <span style={{ color: "blue", cursor: "pointer" }} onClick={() => { setIsSignup(!isSignup);
-                if(!isSignup){
+               
+                 if(!isSignup){
                     setFormData({
                         userName : "",
                         email : "",
@@ -65,7 +63,6 @@ const Login = () => {
                         password : "",
                     });
                 }
-                
                  }}>{isSignup ? "Login" : "Signup"}</span>
             </div>
         </div>
