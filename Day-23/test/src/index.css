@@ -88,10 +88,11 @@ button:active{
 
 .container{
     height: 100vh;
-    background-color: rgb(232, 232, 232);
-    /* display: flex;
+    background-color: lightgreen;
+    display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
+    flex-direction: column;
 }
 
 .form{

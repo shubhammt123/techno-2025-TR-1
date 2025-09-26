@@ -10,20 +10,20 @@ import Profile from './Profile'
 
 const Router = createBrowserRouter([
 
-  // {
-  //   path : "/dashboard",
-  //   element : <Dashboard />,
-  //   children : [
-  //     {
-  //       path : "profile",
-  //       element : <Profile />
-  //     }
-  //   ]
-  // },
-  // {
-  //   path : "/home",
-  //   element : <Home />
-  // }
+  {
+    path : "/dashboard",
+    element : <Dashboard />,
+    children : [
+      {
+        path : "profile",
+        element : <Profile />
+      }
+    ]
+  },
+  {
+    path : "/home",
+    element : <Home />
+  }
 
   // {
   //   element : <Parent />,

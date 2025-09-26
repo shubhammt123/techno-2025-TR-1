@@ -18,6 +18,7 @@ import Profile from '../sellerAdminCustomer/Profile'
 import Login from '../unprotectedRoutes/Login'
 import Signup from '../unprotectedRoutes/Signup'
 import Home from '../openRoutes/Home'
+import About from '../openRoutes/About'
 
 const Router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const Router = createBrowserRouter([
             {
                 path : "wishlist",
                 element : <Wishlist />
+            },
+            {
+                path : "about",
+                element : <About />
             }
         ]
     },

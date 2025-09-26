@@ -1,8 +1,12 @@
 import React from 'react'
+import GrandChild from './GrandChild'
 
 const Child = () => {
   return (
-    <div>Child</div>
+    <div style={{height : "70vh" , width : "80vw" , backgroundColor : "lightblue" , display : "flex" , justifyContent : "center" , alignItems : "center" , flexDirection : "column"}}>
+      Child
+      <GrandChild  />
+      </div>
   )
 }
 

@@ -6,9 +6,15 @@ import Effect1 from "./Effect1";
 import Hooks from "./Hooks";
 import Login from "./Login";
 import Router from "./Router";
+import ParentComponent from "./ParentComponent";
+import { useContext, useState } from "react";
+import CountContext from "./context/CountContext";
 
 function App() {
   let pName = "Samsung S24 Ultra";
+
+  const {count} = useContext(CountContext);
+
 
   // let data = [
   //   {
@@ -49,7 +55,10 @@ function App() {
      {/* <Effect1 /> */}
      {/* <Login /> */}
      {/* <Navbar /> */}
-     <RouterProvider router={Router} />
+     {/* <RouterProvider router={Router} /> */}
+     App Component
+     <p>Count : {count}</p>
+     <ParentComponent />
     </div>
   )
 }
