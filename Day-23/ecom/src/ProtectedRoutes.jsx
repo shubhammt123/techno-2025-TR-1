@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+import AuthContext from './context/AuthContext';
+import Navbar from './Navbar';
 
 const ProtectedRoutes = ({allowedRole}) => {
-    const [auth , setAuth] = useState(true);
-    const [role , setRole] =  useState("CUSTOMER");
+    const {auth , role} = useContext(AuthContext)
 
     const naviagte  = useNavigate();
 
@@ -24,6 +25,7 @@ const ProtectedRoutes = ({allowedRole}) => {
 
   return (
     <div>
+      <Navbar />
         <Outlet />
     </div>
   )
