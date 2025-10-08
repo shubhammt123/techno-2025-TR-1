@@ -4,6 +4,8 @@ import AuthContext from './context/AuthContext'
 
 const Navbar = () => {
 
+    console.log(window.location.pathname)
+
     const {auth ,setAuth , role , setRole} = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -12,6 +14,8 @@ const Navbar = () => {
     const handleLogout = ()=>{
         setAuth(false);
         setRole(null);
+        localStorage.removeItem("auth");
+        localStorage.removeItem("role");
         navigate("/auth/login")
     }
   return (

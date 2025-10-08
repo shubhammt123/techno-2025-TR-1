@@ -16,10 +16,12 @@ const Login = () => {
         e.preventDefault();  
         console.log(formData);
         const role = prompt("Enter Role");
+        localStorage.setItem("auth",true);
+        localStorage.setItem("role",role);
         setRole(role);
         setAuth(true);
         if(role ===  "SELLER" || role === "ADMIN"){
-          navigate("/selleradmin/dashboard");
+          navigate("/selleradmin/dashbo");
         }else{
           navigate("/home");
         }

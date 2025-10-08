@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import OpenRoutes from '../OpenRoutes'
 import Product from '../openRoutes/Product'
 import ProductById from '../openRoutes/ProductById'
@@ -126,6 +126,10 @@ const Router = createBrowserRouter([
                 element : <Signup />
             }
         ]
+    },
+    {
+        path  : "*",
+        element : <Navigate to="/home" />
     }
 ])
 
