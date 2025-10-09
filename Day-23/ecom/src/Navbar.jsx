@@ -1,19 +1,23 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthContext from './context/AuthContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from './redux/slices/authSlice'
 
 const Navbar = () => {
 
     console.log(window.location.pathname)
 
-    const {auth ,setAuth , role , setRole} = useContext(AuthContext);
+    // const {auth ,setAuth , role , setRole} = useContext(AuthContext);
+
+    const { auth , role } = useSelector((state)=>state.auth);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
 
     const handleLogout = ()=>{
-        setAuth(false);
-        setRole(null);
+        dispatch(logout());
         localStorage.removeItem("auth");
         localStorage.removeItem("role");
         navigate("/auth/login")

@@ -9,8 +9,6 @@ const Account = () => {
     const [amount , setAmount] = useState(0);
 
     const dispatch = useDispatch();
-
-
   return (
     <div className="container">
         <p>Account Balance : {accountBalance}</p>

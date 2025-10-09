@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../redux/slices/authSlice';
 
 const Login = () => {
 
@@ -9,17 +11,18 @@ const Login = () => {
         password : "",
     });
 
-    const {auth ,setAuth , role , setRole} = useContext(AuthContext);
-    console.log(auth)
-    console.log(role)
+    const dispatch = useDispatch();
+
+    // const {auth ,setAuth , role , setRole} = useContext(AuthContext);
+
+    const {auth , role} = useSelector((state)=>state.auth);
     const handleSubmit = (e)=>{
         e.preventDefault();  
         console.log(formData);
         const role = prompt("Enter Role");
         localStorage.setItem("auth",true);
         localStorage.setItem("role",role);
-        setRole(role);
-        setAuth(true);
+        dispatch(login(role));
         if(role ===  "SELLER" || role === "ADMIN"){
           navigate("/selleradmin/dashbo");
         }else{
