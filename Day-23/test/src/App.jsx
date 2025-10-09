@@ -9,12 +9,11 @@ import Router from "./Router";
 import ParentComponent from "./ParentComponent";
 import { useContext, useState } from "react";
 import CountContext from "./context/CountContext";
+import { deposite } from "./redux/slices/accountSlice";
+import Account from "./Account";
 
 function App() {
   let pName = "Samsung S24 Ultra";
-
-  const {count} = useContext(CountContext);
-
 
   // let data = [
   //   {
@@ -40,7 +39,7 @@ function App() {
   // ]
 
   return (
-    <div className="container">
+    <div >
      {/* {
       data.map((item)=>{
         return (
@@ -56,10 +55,9 @@ function App() {
      {/* <Login /> */}
      {/* <Navbar /> */}
      {/* <RouterProvider router={Router} /> */}
-     App Component
-     <p>Count : {count}</p>
-     <ParentComponent />
+     <Account />
     </div>
+
   )
 }
 
