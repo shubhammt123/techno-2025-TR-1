@@ -2,13 +2,8 @@ import React, { useContext } from 'react'
 import AuthContext from '../context/AuthContext'
 
 const Home = () => {
-  // const {auth , role} = useContext(AuthContext);
-
-
-  // console.log(auth)
-  // console.log(role)
   return (
-    <div>Home</div>
+    <div className='bg-[#ff8686]'>Home</div>
   )
 }
 
