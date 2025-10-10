@@ -1,7 +1,11 @@
 // fs , os , path , http
 // express
 
-const fs = require("fs");
+// const fs = require("fs");
+
+// const os = require("os");
+
+const http = require("http");
 
 // fs.mkdirSync("files");
 
@@ -49,9 +53,42 @@ const fs = require("fs");
 //     }
 // });
 
-fs.unlink("files/index.js",()=>{});
-fs.rmdir("files",(err)=>{
-    if(err){
-        console.log(err)
+// fs.unlink("files/index.js",()=>{});
+// fs.rmdir("files",(err)=>{
+//     if(err){
+//         console.log(err)
+//     }
+// });
+
+
+// console.log(os.arch());
+// console.log(os.hostname());
+// console.log(os.homedir());
+// console.log(os.freemem());
+// console.log(os.totalmem());
+
+let productData = [{
+    productId : 1,
+    name : "Iphone",
+    category : "smartphone",
+    price : 100000
+},{
+    productId : 2,
+    name : "Samsung",
+    category : "smartphone",
+    price : 100000
+}
+]
+
+const server = http.createServer((req,res)=>{
+    if(req.url === "/"){ // http://localhost:3000
+        res.end("Home route accessed");
+    }else if(req.url = "/product"){ // http://localhost:3000/product
+        res.end(JSON.stringify(productData));
     }
 });
+
+
+server.listen(3000,"127.0.0.1",()=>{
+    console.log("Server is running on port 3000");
+})
