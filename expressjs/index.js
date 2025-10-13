@@ -53,7 +53,13 @@ app.put("/updateProduct/:productId",(req,res)=>{
      fs.writeFileSync("product.json",JSON.stringify(productData , null , 2));
      res.status(202).send({message : "Product Updated"});
 });
-app.delete("/deleteProduct",()=>{});
+app.delete("/deleteProduct/:productId",(req,res)=>{
+    const {productId} = req.params;
+     const productData = JSON.parse(fs.readFileSync("product.json","utf-8"));
+     const filteredProduct = productData.filter((item)=>item.id !== +productId);
+     fs.writeFileSync("product.json",JSON.stringify(filteredProduct , null , 2));
+     res.status(202).send({message : "Product Deleted"});
+});
 
 
 
