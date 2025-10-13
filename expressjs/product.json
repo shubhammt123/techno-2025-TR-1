@@ -3,12 +3,14 @@
     "productName": "Iphone",
     "price": 1000,
     "description": "This is Iphone 16 series of apple",
-    "category": "smartphone"
+    "category": "smartphone",
+    "id": 1760330808680
   },
   {
-    "productName": "Iphone",
+    "productName": "Samsung S24 Ultra",
     "price": 1000,
-    "description": "This is Iphone 16 series of apple",
-    "category": "smartphone"
+    "description": "This is s series of smasung",
+    "category": "smartphone",
+    "id": 1760330862182
   }
 ]
