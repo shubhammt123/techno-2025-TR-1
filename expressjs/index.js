@@ -40,8 +40,18 @@ app.post("/createProduct",(req,res)=>{
     fs.writeFileSync("product.json",JSON.stringify(parsedData , null ,2));
     res.status(201).send({message : "Product Created" , product : updatedReqBody})
 });
-app.put("/updateProduct",(req,res)=>{
-
+app.put("/updateProduct/:productId",(req,res)=>{
+    const {productId } = req.params;
+     const productData = JSON.parse(fs.readFileSync("product.json","utf-8"));
+     const index = productData.findIndex((item)=>{
+        return item.id === +productId;
+     });
+     if(index === -1) return res.status(404).send({message : "Product Not Found"});
+     const updatedProduct = {...productData[index],...req.body};
+     productData[index] = updatedProduct;
+     console.log(productData)
+     fs.writeFileSync("product.json",JSON.stringify(productData , null , 2));
+     res.status(202).send({message : "Product Updated"});
 });
 app.delete("/deleteProduct",()=>{});
 
@@ -50,3 +60,4 @@ app.delete("/deleteProduct",()=>{});
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");
 });
+
