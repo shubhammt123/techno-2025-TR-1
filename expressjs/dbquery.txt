@@ -1,0 +1,433 @@
+ show dbs
+11ecom            376.00 KiB
+Nestial            28.00 KiB
+abc                12.00 KiB
+admin             132.00 KiB
+aman               24.00 KiB
+anujDatabase       40.00 KiB
+blog              144.00 KiB
+cafe              148.00 KiB
+cafe-credit       396.00 KiB
+config             84.00 KiB
+database1         108.00 KiB
+ecommerce          80.00 KiB
+ecommerce1        108.00 KiB
+ecommerce2         72.00 KiB
+firstDatabase      20.00 KiB
+ibhraimEcom       252.00 KiB
+inter1             88.00 KiB
+interPrep         252.00 KiB
+interview          60.00 KiB
+local             104.00 KiB
+moviesApp         208.00 KiB
+multer             72.00 KiB
+practice          108.00 KiB
+productApi        732.00 KiB
+reactflow          72.00 KiB
+roadmap            64.00 KiB
+sangam            228.00 KiB
+shiryansh          72.00 KiB
+shubham           180.00 KiB
+techno             72.00 KiB
+technoEcom        144.00 KiB
+technoTr4Project  108.00 KiB
+technoprojectTr4  252.00 KiB
+technotr1project  180.00 KiB
+test              320.00 KiB
+testecom          168.00 KiB
+todo               68.00 KiB
+tr4               108.00 KiB
+travelTech        216.00 KiB
+travelTech1       128.00 KiB
+test> use technotr1;
+switched to db technotr1
+technotr1> use productApi;
+switched to db productApi
+productApi> show collections();
+MongoshInvalidInputError: [COMMON-10001] 'collections()' is not a valid argument for "show".
+productApi> show collection;
+MongoshInvalidInputError: [COMMON-10001] 'collection' is not a valid argument for "show".
+productApi> show collectiona;
+MongoshInvalidInputError: [COMMON-10001] 'collectiona' is not a valid argument for "show".
+productApi> show collections;
+averageratings
+carts
+categories
+collectiontypes
+colors
+products
+ratings
+reviews
+sizes
+users
+productApi> use technotr1;
+switched to db technotr1
+technotr1> show collections;
+
+technotr1> db.createCollection("products");
+{ ok: 1 }
+technotr1> show collections;
+products
+technotr1> show dbs;
+11ecom            376.00 KiB
+Nestial            28.00 KiB
+abc                12.00 KiB
+admin             132.00 KiB
+aman               24.00 KiB
+anujDatabase       40.00 KiB
+blog              144.00 KiB
+cafe              148.00 KiB
+cafe-credit       396.00 KiB
+config             72.00 KiB
+database1         108.00 KiB
+ecommerce          80.00 KiB
+ecommerce1        108.00 KiB
+ecommerce2         72.00 KiB
+firstDatabase      20.00 KiB
+ibhraimEcom       252.00 KiB
+inter1             88.00 KiB
+interPrep         252.00 KiB
+interview          60.00 KiB
+local             104.00 KiB
+moviesApp         208.00 KiB
+multer             72.00 KiB
+practice          108.00 KiB
+productApi        732.00 KiB
+reactflow          72.00 KiB
+roadmap            64.00 KiB
+sangam            228.00 KiB
+shiryansh          72.00 KiB
+shubham           180.00 KiB
+techno             72.00 KiB
+technoEcom        144.00 KiB
+technoTr4Project  108.00 KiB
+technoprojectTr4  252.00 KiB
+technotr1           8.00 KiB
+technotr1project  180.00 KiB
+test              320.00 KiB
+testecom          168.00 KiB
+todo               68.00 KiB
+tr4               108.00 KiB
+travelTech        216.00 KiB
+travelTech1       128.00 KiB
+technotr1> db.products.drop();
+true
+technotr1> show collections;
+
+technotr1> db;
+technotr1
+technotr1> db.dropdatabase();
+TypeError: db.dropdatabase is not a function
+technotr1> db.dropDatabase();
+{ ok: 1, dropped: 'technotr1' }
+technotr1> show dbs;
+11ecom            376.00 KiB
+Nestial            28.00 KiB
+abc                12.00 KiB
+admin             132.00 KiB
+aman               24.00 KiB
+anujDatabase       40.00 KiB
+blog              144.00 KiB
+cafe              148.00 KiB
+cafe-credit       396.00 KiB
+config             96.00 KiB
+database1         108.00 KiB
+ecommerce          80.00 KiB
+ecommerce1        108.00 KiB
+ecommerce2         72.00 KiB
+firstDatabase      20.00 KiB
+ibhraimEcom       252.00 KiB
+inter1             88.00 KiB
+interPrep         252.00 KiB
+interview          60.00 KiB
+local             104.00 KiB
+moviesApp         208.00 KiB
+multer             72.00 KiB
+practice          108.00 KiB
+productApi        732.00 KiB
+reactflow          72.00 KiB
+roadmap            64.00 KiB
+sangam            228.00 KiB
+shiryansh          72.00 KiB
+shubham           180.00 KiB
+techno             72.00 KiB
+technoEcom        144.00 KiB
+technoTr4Project  108.00 KiB
+technoprojectTr4  252.00 KiB
+technotr1project  180.00 KiB
+test              320.00 KiB
+testecom          168.00 KiB
+todo               68.00 KiB
+tr4               108.00 KiB
+travelTech        216.00 KiB
+travelTech1       128.00 KiB
+technotr1> db.createCollection("products");
+{ ok: 1 }
+technotr1> show collections;
+products
+technotr1> db.products.find();
+
+technotr1> db.products.insertOne({"productName" : "Iphone","price" : 100000});
+{
+  acknowledged: true,
+  insertedId: ObjectId('68ef6add9b6494e9c7cdcdf6')
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  }
+]
+technotr1> db.products.insertMany([{"productName" : "samsung s24 ultra" , price : 100000},{"productName" : "Google Pixel" , price" : 50000}])
+Uncaught:
+SyntaxError: Unterminated string constant. (1:118)
+
+> 1 | db.products.insertMany([{"productName" : "samsung s24 ultra" , price : 100000},{"productName" : "Google Pixel" , price" : 50000}])
+    |                                                                                                                       ^
+  2 |
+
+technotr1> db.products.insertMany([{"productName" : "samsung s24 ultra" , price : 100000},{"productName" : "Google Pixel" , price : 50000}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    '1': ObjectId('68ef6bdd9b6494e9c7cdcdf8')
+  }
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000
+  }
+]
+technotr1> db.products.insertMany([{},{}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68ef6c389b6494e9c7cdcdf9'),
+    '1': ObjectId('68ef6c389b6494e9c7cdcdfa')
+  }
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9') },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa') }
+]
+technotr1> db.products.insertMany([{_id : 1},{_id : 2}]);
+{ acknowledged: true, insertedIds: { '0': 1, '1': 2 } }
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9') },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa') },
+  { _id: 1 },
+  { _id: 2 }
+]
+technotr1> ObjectId("507c7f79bcf86cd7994f6c0e").getTimestamp()
+ISODate('2012-10-15T21:26:17.000Z')
+technotr1> ObjectId("68ef6c389b6494e9c7cdcdf9").getTimestamp()
+ISODate('2025-10-15T09:41:12.000Z')
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9') },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa') },
+  { _id: 1 },
+  { _id: 2 }
+]
+technotr1> db.products.findOne({productName : "Iphone"});
+{
+  _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+  productName: 'Iphone',
+  price: 100000
+}
+technotr1> db.products.findOne({price : 100000});
+{
+  _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+  productName: 'Iphone',
+  price: 100000
+}
+technotr1> db.products.find({price : 100000});
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  }
+]
+technotr1> db.products.update({_id : 1} , {$set : {productName : "Nothing"}});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+technotr1> db.products.updateOne({_id : 1} , {$set : {productName : "Nothing"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9') },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa') },
+  { _id: 1, productName: 'Nothing' },
+  { _id: 2 }
+]
+technotr1> db.products.updateMany({},{$set : {category : "smartphone"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000,
+    category: 'smartphone'
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000,
+    category: 'smartphone'
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000,
+    category: 'smartphone'
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9'), category: 'smartphone' },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa'), category: 'smartphone' },
+  { _id: 1, productName: 'Nothing', category: 'smartphone' },
+  { _id: 2, category: 'smartphone' }
+]
+technotr1> db.products.updateMany({$or : [{_id : 1 } , {_id : 2}]},{$set : {category : "mobile"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+technotr1> db.products.find();
+[
+  {
+    _id: ObjectId('68ef6add9b6494e9c7cdcdf6'),
+    productName: 'Iphone',
+    price: 100000,
+    category: 'smartphone'
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf7'),
+    productName: 'samsung s24 ultra',
+    price: 100000,
+    category: 'smartphone'
+  },
+  {
+    _id: ObjectId('68ef6bdd9b6494e9c7cdcdf8'),
+    productName: 'Google Pixel',
+    price: 50000,
+    category: 'smartphone'
+  },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdf9'), category: 'smartphone' },
+  { _id: ObjectId('68ef6c389b6494e9c7cdcdfa'), category: 'smartphone' },
+  { _id: 1, productName: 'Nothing', category: 'mobile' },
+  { _id: 2, category: 'mobile' }
+]
+technotr1> db.products.deleteOne({productName : "Iphone"});
+{ acknowledged: true, deletedCount: 1 }
+technotr1> db.products.deleteMany({productName : "Iphone"});
+{ acknowledged: true, deletedCount: 0 }
+technotr1> db.products.deleteMany({});
+{ acknowledged: true, deletedCount: 6 }
+technotr1> db.products.find();
+
+technotr1>
