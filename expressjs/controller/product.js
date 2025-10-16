@@ -1,18 +1,26 @@
 const fs = require("fs");
+const Product = require("../model/product");
+const product = require("../model/product");
 
-const getAllProduct = (req,res)=>{
-    console.log("Get All Product")
-    let productData = fs.readFileSync("product.json","utf-8");
-    res.send(productData);
+const getAllProduct = async (req,res)=>{
+    try {
+    const productData = await Product.find();
+    console.log(productData)
+    res.status(200).send({message : "Product Data Fetched" , products : productData});
+    } catch (error) {
+        res.status(500).send({error : "Error Fetching data"});
+    }
 };
 
-const getProductById = (req,res)=>{
-    const {productId} = req.params;
-    console.log(typeof productId)
-    const productData = JSON.parse(fs.readFileSync("product.json","utf-8"));
-    const filteredData = productData.filter((item)=>item.id===+productId);
-    if(filteredData.length === 0) return res.status(404).send({message : "Product not found"});
-    res.status(200).send({message : "Product Fetched" , product : filteredData[0]});
+const getProductById =  async (req,res)=>{
+    try {
+        const {productId} = req.params;
+    const product = await Product.findById(productId);
+    if(!product) return res.status(404).send({error : "Product Not Found"})
+    res.status(200).send({message : "Product Fetched" , product : product});
+    } catch (error) {
+     res.status(500).send({error : "Error Fetching Data"});   
+    }
 };
 
 const createProduct = (req,res)=>{

@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const productRoutes = require("./router/product");
 const loggerMiddleware = require("./middleware/loggerMiddileware");
+const connectDb = require("./config/db");
 const app = express();
 
 // create - POST
@@ -10,6 +11,8 @@ const app = express();
 // delete - DELETE
 
 app.use(express.json());
+
+connectDb();
 
 app.use(loggerMiddleware);
 // product CRUD
