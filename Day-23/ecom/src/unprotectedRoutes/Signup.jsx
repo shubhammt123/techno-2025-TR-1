@@ -9,13 +9,18 @@ const Signup = () => {
         password : "",
     });
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+    const handleSubmit = async (e)=>{
+        try {
+            e.preventDefault();
         if(formData.confirmPassword !== formData.password){
             alert("Password and confirm password should be same");
             return;
         }
-        console.log(formData)
+         const response = await axios.post("http://localhost:3000/auth/signup",formData);
+        console.log(response);
+        } catch (error) {
+        console.log(error);    
+        }
     }
 
     const handleChange = (e)=>{

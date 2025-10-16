@@ -23,38 +23,38 @@ const getProductById =  async (req,res)=>{
     }
 };
 
-const createProduct = (req,res)=>{
-    const reqBody = req.body;
-    console.log(reqBody)
-    const productData = fs.readFileSync("product.json","utf-8");
-    console.log(productData)
-    const parsedData = JSON.parse(productData);
-    const updatedReqBody = {...reqBody , id : Date.now()};
-    parsedData.push(updatedReqBody);
-    fs.writeFileSync("product.json",JSON.stringify(parsedData , null ,2));
-    res.status(201).send({message : "Product Created" , product : updatedReqBody})
+const createProduct = async (req,res)=>{
+    try {
+        const reqBody = req.body;
+    const product = await Product.create(reqBody);
+    res.status(201).send({message : "Product Created" , product : product});
+    } catch (error) {
+        res.status(500).send({error : "Error Creating Product"});
+    }
 };
 
-const updateProduct = (req,res)=>{
+const updateProduct = async (req,res)=>{
+   try {
     const {productId } = req.params;
-     const productData = JSON.parse(fs.readFileSync("product.json","utf-8"));
-     const index = productData.findIndex((item)=>{
-        return item.id === +productId;
-     });
-     if(index === -1) return res.status(404).send({message : "Product Not Found"});
-     const updatedProduct = {...productData[index],...req.body};
-     productData[index] = updatedProduct;
-     console.log(productData)
-     fs.writeFileSync("product.json",JSON.stringify(productData , null , 2));
-     res.status(202).send({message : "Product Updated"});
+    const product = await Product.findById(productId);
+    if(!product) return res.status(404).send({error : "Product Not Found"})
+    const updatedProduct = await Product.findByIdAndUpdate(productId , req.body,{new : true});
+     res.status(202).send({message : "Product Updated" , product : updatedProduct});
+   } catch (error) {
+    res.status(500).send({error : "Error updating product"});
+   }
 };
 
-const deleteProduct = (req,res)=>{
-    const {productId} = req.params;
-     const productData = JSON.parse(fs.readFileSync("product.json","utf-8"));
-     const filteredProduct = productData.filter((item)=>item.id !== +productId);
-     fs.writeFileSync("product.json",JSON.stringify(filteredProduct , null , 2));
+const deleteProduct = async (req,res)=>{
+    try {
+        const {productId} = req.params;
+        const product = await Product.findById(productId);
+    if(!product) return res.status(404).send({error : "Product Not Found"})
+    const deletedProduct = await Product.findOneAndDelete(productId);
      res.status(202).send({message : "Product Deleted"});
+    } catch (error) {
+        res.status(500).send({error : "Error Deleting product"});
+    }
 };
 
 module.exports = {getAllProduct , getProductById , createProduct , updateProduct , deleteProduct};

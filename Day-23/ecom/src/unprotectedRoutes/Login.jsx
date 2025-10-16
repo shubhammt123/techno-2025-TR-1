@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/slices/authSlice';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -16,17 +17,21 @@ const Login = () => {
     // const {auth ,setAuth , role , setRole} = useContext(AuthContext);
 
     const {auth , role} = useSelector((state)=>state.auth);
-    const handleSubmit = (e)=>{
-        e.preventDefault();  
-        console.log(formData);
-        const role = prompt("Enter Role");
+    const handleSubmit = async (e)=>{
+        try {
+            e.preventDefault();
+            const response = await axios.post("http://localhost:3000/auth/login",formData);
+        console.log(response.data.user.role)
         localStorage.setItem("auth",true);
-        localStorage.setItem("role",role);
-        dispatch(login(role));
+        localStorage.setItem("role",response.data.user.role);
+        dispatch(login(response.data.user.role));
         if(role ===  "SELLER" || role === "ADMIN"){
           navigate("/selleradmin/dashbo");
         }else{
           navigate("/home");
+        }
+        } catch (error) {
+            console.log(error)
         }
     }
 
