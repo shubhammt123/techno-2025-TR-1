@@ -5,6 +5,7 @@ import Modal from './Modal';
 import Alert from './Alert';
 import Card from './Card';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import List from './List';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -59,9 +60,12 @@ export default function App() {
       <Card />
       <Card />
       </ScrollView> */}
-      <Text >
+      {/* <Text >
         Hello
-      </Text>
+      </Text> */}
+      <ScrollView>
+        <List />
+      </ScrollView>
     </View>
     </SafeAreaView>
     </SafeAreaProvider>
