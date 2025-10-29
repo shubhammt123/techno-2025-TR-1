@@ -4,6 +4,7 @@ import Home from './Home';
 import Modal from './Modal';
 import Alert from './Alert';
 import Card from './Card';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -11,7 +12,8 @@ export default function App() {
   const [buttonTextColor , setButtonTextColor] = useState("orange");
   return ( 
     <>
-    
+    <SafeAreaProvider>
+      <SafeAreaView>
     {/* <View style={styles.container}>
       <Text  style={styles.para}>
         Hello My Name is shubham
@@ -44,10 +46,10 @@ export default function App() {
     </View> */}
     {/* <Modal /> */}
     {/* <Alert /> */}
-    <View style={{flex : 1 , justifyContent : "center" ,   alignItems : "center"}}>
+    <View >
       {/* <ActivityIndicator size="small" color="red" /> */}
       {/* <StatusBar backgroundColor="lightgreen" barStyle="default" /> */}
-      <ScrollView horizontal={true}>
+      {/* <ScrollView horizontal={true}>
         <Card />
       <Card />
       <Card />
@@ -56,8 +58,13 @@ export default function App() {
       <Card />
       <Card />
       <Card />
-      </ScrollView>
+      </ScrollView> */}
+      <Text >
+        Hello
+      </Text>
     </View>
+    </SafeAreaView>
+    </SafeAreaProvider>
     </>
   );
 }
