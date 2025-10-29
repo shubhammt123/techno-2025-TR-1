@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import Home from './Home';
 
 export default function App() {
   const  [count , setCount] = useState(0)
-  return (
+  const [buttonBackgroundColor , setButtonBackgroundColor] = useState("white");
+  const [buttonTextColor , setButtonTextColor] = useState("orange");
+  return ( 
     <>
     
     {/* <View style={styles.container}>
@@ -15,7 +18,7 @@ export default function App() {
     <View style={styles.item}>
 
     </View> */}
-    <View style={{flex : 1 , justifyContent : "center" , alignItems : "center"} }>
+    {/* <View style={{flex : 1 , justifyContent : "center" , alignItems : "center"} }>
       
       <Button title="Inc Count(+)" style={styles.para} color="midnightblue" onPress={()=>{
         setCount(count+1)
@@ -26,6 +29,16 @@ export default function App() {
       <Button title="Dec Count(-)" style={styles.para} color="midnightblue" onPress={()=>{
         setCount(count-1)
       }} disabled={count<=0} />
+    </View> */}
+    <Home />
+    <View style={{justifyContent :   "center" , alignItems : "center"}}>
+      <Pressable onPressIn={()=>{setButtonBackgroundColor("orange") ; setButtonTextColor("white")}} onPressOut={()=>{setButtonBackgroundColor("white") ; setButtonTextColor("orange")}}>
+      <View style={{borderWidth : 2 , padding :  10 , borderColor : "orange" , backgroundColor  : buttonBackgroundColor}}>
+        <Text style={{fontSize : 20 , color : buttonTextColor}}>
+          Click Me
+        </Text>
+      </View>
+    </Pressable>
     </View>
     </>
   );
