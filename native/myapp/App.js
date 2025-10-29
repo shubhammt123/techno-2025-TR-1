@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import Home from './Home';
 import Modal from './Modal';
+import Alert from './Alert';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -41,7 +42,8 @@ export default function App() {
       </View>
     </Pressable>
     </View> */}
-    <Modal />
+    {/* <Modal /> */}
+    <Alert />
     </>
   );
 }

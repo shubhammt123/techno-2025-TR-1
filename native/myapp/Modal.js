@@ -8,7 +8,7 @@ const Model = () => {
     <View style={{flex : 1 , justifyContent : "center" , alignItems : "center" , backgroundColor : "lightyellow"}}>
       <Button title='Open Modal' onPress={()=>{setVisible(true)}} />
     </View>
-    <Modal visible={visible} animationType='fade' transparent={false}>
+    <Modal visible={visible} animationType='fade' transparent={false} onRequestClose={()=>{setVisible(false)}}>
         <View style={{flex : 1  ,alignItems :  "center" ,}}>
             <Button title='Close Modal' onPress={()=>{setVisible(false)}} />
         </View>
