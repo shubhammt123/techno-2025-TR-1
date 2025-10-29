@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Button, Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import Home from './Home';
 import Modal from './Modal';
 import Alert from './Alert';
+import Card from './Card';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -43,7 +43,21 @@ export default function App() {
     </Pressable>
     </View> */}
     {/* <Modal /> */}
-    <Alert />
+    {/* <Alert /> */}
+    <View style={{flex : 1 , justifyContent : "center" ,   alignItems : "center"}}>
+      {/* <ActivityIndicator size="small" color="red" /> */}
+      {/* <StatusBar backgroundColor="lightgreen" barStyle="default" /> */}
+      <ScrollView horizontal={true}>
+        <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      </ScrollView>
+    </View>
     </>
   );
 }
