@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import Home from './Home';
+import Modal from './Modal';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -30,8 +31,8 @@ export default function App() {
         setCount(count-1)
       }} disabled={count<=0} />
     </View> */}
-    <Home />
-    <View style={{justifyContent :   "center" , alignItems : "center"}}>
+    {/* <Home /> */}
+    {/* <View style={{justifyContent :   "center" , alignItems : "center"}}>
       <Pressable onPressIn={()=>{setButtonBackgroundColor("orange") ; setButtonTextColor("white")}} onPressOut={()=>{setButtonBackgroundColor("white") ; setButtonTextColor("orange")}}>
       <View style={{borderWidth : 2 , padding :  10 , borderColor : "orange" , backgroundColor  : buttonBackgroundColor}}>
         <Text style={{fontSize : 20 , color : buttonTextColor}}>
@@ -39,7 +40,8 @@ export default function App() {
         </Text>
       </View>
     </Pressable>
-    </View>
+    </View> */}
+    <Modal />
     </>
   );
 }
