@@ -20,13 +20,22 @@ const List = () => {
         fetchData();
     },[])
   return (
-    <View style={{flexDirection : "row" , flexWrap : "wrap" , gap : 10}}>
+    <View style={{flexDirection : "row" , flexWrap : "wrap" , gap : 20 , justifyContent : "center" , alignItems  : "center" , margin : 20}}>
       {
-        productData.map((item)=>(
-            <View key={item.id}>
-                <Image source={{uri : item.image}} style={{width : 250 , height : 300}} />
+        productData.map((item)=>{
+          console.log(item.title.slice(1,5))
+            return(
+              <View key={item.id} style={{backgroundColor : "#ebebebff" , padding : 20 , borderRadius : 10, elevation : 5 , gap : 20}}>
+                <Image source={{uri : item.image}} style={{width : 220 , height : 300}} />
+                <Text style={{textAlign : "center" , fontSize : 20}}>
+                  {item.title.slice(0,15)}...
+                </Text>
+                <Text style={{fontSize  : 25 , textAlign : "center"}}>
+                  Rs. {item.price}
+                </Text>
             </View>
-        ))
+            )
+})
       }
     </View>
   )
