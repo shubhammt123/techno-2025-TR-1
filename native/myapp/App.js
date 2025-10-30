@@ -63,9 +63,9 @@ export default function App() {
       {/* <Text >
         Hello
       </Text> */}
-      <ScrollView>
+      
         <List />
-      </ScrollView>
+      
     </View>
     </SafeAreaView>
     </SafeAreaProvider>
