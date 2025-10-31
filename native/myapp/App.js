@@ -8,6 +8,8 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import List from './List';
 import Form from './Form';
 import StackNavigator from './StackNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import TabNavigator from './TabNavigator';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -68,7 +70,10 @@ export default function App() {
         {/* <List /> */}
       {/* <Form /> */}
     </View>
-    <StackNavigator />
+    <NavigationContainer>
+      
+    <TabNavigator />
+    </NavigationContainer>
     </>
   );
 }
