@@ -1,8 +1,10 @@
 import { Button, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Vector from "./assets/icon.png"
+import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
+  const navigation = useNavigation();
   return (
     <Pressable onPress={()=>{
         console.log("Card clicked");
@@ -16,7 +18,7 @@ const Home = () => {
         Canon 1200D
       </Text>
     </View>
-    {/* <Button title='Click Me' onLongPress={()=>{console.log("Button Clicked")}} /> */}
+    <Button title='Profile' onPress={()=>{navigation.navigate("Profile")}} />
     </Pressable>
   )
 }

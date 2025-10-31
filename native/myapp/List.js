@@ -1,6 +1,16 @@
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
+const MyHeader = ()=>{
+  return (
+    <View>
+      <Text style={{fontSize : 40 , textAlign : "center" ,padding : 10 , backgroundColor : "lightblue" }}>
+        My List Header
+      </Text>
+    </View>
+  )
+}
+
 const List = () => {
 
     const [productData , setProductData] = useState([]);
@@ -19,7 +29,7 @@ const List = () => {
         fetchData();
     },[])
   return (
-    <View style={{flexDirection : "row" , flexWrap : "wrap" , gap : 20 , justifyContent : "center" , alignItems  : "center" , margin : 20}}>
+    <View style={{flexDirection : "row" , flexWrap : "wrap" , gap : 20 , justifyContent : "center" , alignItems  : "center" , margin : 20 , zIndex :  999}}>
       {/* {
         productData.map((item)=>{
           console.log(item.title.slice(1,5))
@@ -52,9 +62,10 @@ const List = () => {
             </View>
         )
       }}
-
       keyExtractor={item=>item.id}
       numColumns={2}
+      ListHeaderComponent={MyHeader}
+      stickyHeaderIndices={[0]}
        />
     </View>
   )

@@ -6,6 +6,8 @@ import Alert from './Alert';
 import Card from './Card';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import List from './List';
+import Form from './Form';
+import StackNavigator from './StackNavigator';
 
 export default function App() {
   const  [count , setCount] = useState(0)
@@ -13,8 +15,7 @@ export default function App() {
   const [buttonTextColor , setButtonTextColor] = useState("orange");
   return ( 
     <>
-    <SafeAreaProvider>
-      <SafeAreaView>
+    
     {/* <View style={styles.container}>
       <Text  style={styles.para}>
         Hello My Name is shubham
@@ -64,11 +65,10 @@ export default function App() {
         Hello
       </Text> */}
       
-        <List />
-      
+        {/* <List /> */}
+      {/* <Form /> */}
     </View>
-    </SafeAreaView>
-    </SafeAreaProvider>
+    <StackNavigator />
     </>
   );
 }
